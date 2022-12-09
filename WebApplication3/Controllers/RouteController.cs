@@ -58,17 +58,17 @@ namespace WebApplication3.Controllers
 
             resultList.Add(cheap);
             resultList.Add(fast);
+            savedBookings.Add(cheap);
+            savedBookings.Add(fast);
             return Ok(resultList);
         }
 
         [HttpGet]
         [Route("book")]
-        public Booking Get(string bookingId)
+        public Booking Get(int id)
         {
-            int id = Int32.Parse(bookingId);
             Booking b = savedBookings[id - 1];
             b.isBooked = true;
-            Console.WriteLine(b.isBooked);
             //List<Booking> trueBookings = savedBookings.Where(x => x.isBooked).ToList();
             //string fileName = "Bookings.json";
             //string jsonString = JsonSerializer.Serialize(trueBookings);
