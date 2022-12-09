@@ -32,10 +32,10 @@ namespace WebApplication3.Controllers
             cheap.Price = totalRoutesCheap.Select(x => x.Price).Sum();
             cheap.ShippingTime = totalRoutesCheap.Select(x => x.Time).Sum();
             cheap.Date = criteria.Date;
-            cheap.Height = Int32.Parse(criteria.Height);
-            cheap.Width = Int32.Parse(criteria.Width);
-            cheap.Length = Int32.Parse(criteria.Length);
-            cheap.Weight = Int32.Parse(criteria.Weight);
+            cheap.Height = criteria.Height;
+            cheap.Width = criteria.Width;
+            cheap.Length = criteria.Length;
+            cheap.Weight = criteria.Weight;
             cheap.TotalRoute = totalRoutesCheap;
 
             Booking fast = new Booking();
@@ -50,10 +50,10 @@ namespace WebApplication3.Controllers
             fast.ShippingTime = totalRoutesFast.Select(x => x.Time).Sum();
             
             fast.Date = criteria.Date;
-            fast.Height = Int32.Parse(criteria.Height);
-            fast.Width = Int32.Parse(criteria.Width);
-            fast.Length = Int32.Parse(criteria.Length);
-            fast.Weight = Int32.Parse(criteria.Weight);
+            fast.Height = criteria.Height;
+            fast.Width = criteria.Width;
+            fast.Length = criteria.Length;
+            fast.Weight = criteria.Weight;
             fast.TotalRoute = totalRoutesFast;
 
             resultList.Add(cheap);
